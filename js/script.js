@@ -30,6 +30,11 @@ async function initializePyodide() {
   }
 }
 
+// Ensure Pyodide and modules are loaded on DOMContentLoaded
+document.addEventListener("DOMContentLoaded", async () => {
+  await initializePyodide();
+});
+
 async function executeCode() {
   const outputElement = document.getElementById("output");
   const sanskritCode = window.editor.getValue();
