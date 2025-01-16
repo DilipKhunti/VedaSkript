@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VedaSkript</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/highlight.css" />
+  </head>
+  <body>
+    <header>
+      <div class="dark-mode" onclick="changeTheme()">
+        <i class="fa-solid fa-circle-half-stroke"></i>
+      </div>
+      <h1>VedaSkript</h1>
+      <p>
+        <strong>vedaskript</strong> is toy programming language, based on
+        Sanskrit keywords and operators. The language includes features like
+        variables, basic operations, loops, conditions, and built-in functions,
+        all expressed in Sanskrit.
+      </p>
+      <div>
+        <button
+          onclick="window.open('https://github.com/DilipKhunti', '_blank')"
+        >
+          View Source <i class="fa-solid fa-code"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="container">
+      <section class="playground">
+        <div class="top">
+          <h2>Playground</h2>
+          <div class="ide-buttons">
+            <button id="download-code" onclick="saveCode()">
+              <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+            <button id="clear-editor" onclick="clearEditor()">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+            <button id="run-code" onclick="executeCode()">
+              <i class="fa-solid fa-play"></i>
+            </button>
+          </div>
+        </div>
+        <div id="editor"></div>
+        <div class="output">
+          <pre id="output">// Output will appear here</pre>
+        </div>
+      </section>
+
+      <section class="documentation">
+        <h2>Documentation</h2>
+        <p class="doc-desc">
+          <strong>Vedaskript</strong> is a unique programming language inspired
+          by the ancient language of Sanskrit, seamlessly blending the elegance
+          of tradition with the practicality of modern programming. Designed for
+          enthusiasts of both programming and linguistic heritage, Vedaskript
+          introduces Sanskrit-based keywords and syntax for fundamental
+          programming concepts such as variables, loops, functions, and
+          conditions. Powered by WebAssembly and Pyodide, Vedaskript ensures
+          high performance and compatibility, making it accessible directly
+          through web platforms while maintaining a native execution experience.
+          Whether you're exploring its linguistic charm or leveraging its robust
+          features, Vedaskript offers a perfect fusion of the past and present
+          in the world of coding.
+        </p>
+
+        <div class="doc-blocks">
+          <div class="doc-block">
+            <h3>General Code Structure</h3>
+            <p class="block-desc">
+              This is the general structure of a program in the Sanskrit-based
+              programming language. It includes the main function and basic code
+              structure.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+कार्य मुख्यः() {
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Variable Declaration</h3>
+            <p class="block-desc">
+              In this example, we declare a variable using the Sanskrit keyword
+              <strong>चरः</strong> and assign a numerical value to it.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+चरः संख्या = 10;
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Function Definition</h3>
+            <p class="block-desc">
+              Here, we define a function using the Sanskrit keyword
+              <strong>कार्य</strong> followed by the function name. The function
+              will print a message using <strong>मुद्रणम्</strong>.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+कार्य योग(अ, ब) {
+    प्रतिददाति अ + ब; // Return Statement
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Data Types</h3>
+            <p class="block-desc">
+              This demonstrates how to work with different data types such as
+              integers, floats, strings, booleans, and null values in
+              Sanskrit-based code.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+चरः संख्या = 10;  // Integer
+चरः मूल्य = 10.5;  // Float
+चरः नाम = "राज";  // String
+चरः सत्य = सत्य;  // Boolean
+चरः अज्ञात = रिक्त;  // Null
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>If-Else Statement</h3>
+            <p class="block-desc">
+              This example demonstrates how to use an if-else condition in
+              Sanskrit using the <strong>यदि</strong> and
+              <strong>अन्यथा</strong> keywords.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+यदि (संख्या > 5) {
+	मुद्रणम्("संख्या बड़ी है");
+} अन्यथा {
+	मुद्रणम्("संख्या छोटी है");
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>While Loop</h3>
+            <p class="block-desc">
+              This block demonstrates a while loop using the Sanskrit keyword
+              <strong>यावद्‌</strong> to repeat a statement as long as a
+              condition is true.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+यावद्‌ (संख्या < 5) {
+	संख्या = संख्या + 1;
+	मुद्रणम्(संख्या);
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Return Statement</h3>
+            <p class="block-desc">
+              The <strong>प्रतिददाति</strong> keyword is used to return a value
+              from a function in this example.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+कार्य परिणामम्() {
+	प्रतिददाति 10;
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Break Statement</h3>
+            <p class="block-desc">
+              The <strong>विरमतु</strong> keyword is used to exit the loop
+              prematurely.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+यावद्‌ (संख्या < 10) {
+	यदि (संख्या == 5) {
+		विरमतु;
+	}
+	संख्या = संख्या + 1;
+	मुद्रणम्(संख्या);
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Continue Statement</h3>
+            <p class="block-desc">
+              The <strong>अनुवर्तते</strong> keyword is used to skip to the next
+              iteration of the loop.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+यावद्‌ (संख्या < 10) {
+	यदि (संख्या == 5) {
+		अनुवर्तते;
+	}
+	संख्या = संख्या + 1;
+	मुद्रणम्(संख्या);
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="doc-block">
+            <h3>Inbuilt Print Function</h3>
+            <p class="block-desc">
+              The <strong>मुद्रणम्</strong> function is used to print values to
+              the console. It's an inbuilt function that allows for displaying
+              data.
+            </p>
+            <div class="code-container">
+              <pre class="language-vedaskript"><code>
+कार्य मुख्यः() {
+	मुद्रणम्("नमस्ते संसार!");
+}
+      </code></pre>
+              <div class="copy-code" onclick="copyCode(this)">
+                <i class="fa-solid fa-copy"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        &copy; 2025 SanskritLang. Created by
+        <a href="https://github.com/DilipKhunti" target="_blank">Dilip Khunti</a
+        >.
+      </p>
+      <p>
+        <a href="https://github.com/DilipKhunti" target="_blank"
+          ><i class="fa-brands fa-github"></i> GitHub</a
+        >
+        |
+        <a href="https://www.instagram.com/dileepkhunti" target="_blank"
+          ><i class="fa-brands fa-instagram"></i> Instagram</a
+        >
+        |
+        <a href="https://www.linkedin.com/in/dilip-khunti" target="_blank"
+          ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+        >
+      </p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/pyodide/v0.27.0/full/pyodide.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.43.0/min/vs/loader.js"></script>
+    <script src="./js/prism.min.js"></script>
+    <script src="./js/font_awesome.js"></script>
+
+    <script src="./js/script.js" charset="UTF-8"></script>
+    <script src="./js/highlight.js"></script>
+    <script src="./js/editor.js"></script>
+  </body>
+</html>
