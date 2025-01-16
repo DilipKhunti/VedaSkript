@@ -2,11 +2,11 @@ let pyodide; // Global variable for Pyodide
 let executorLoaded = false; // Flag to track if executor.py is loaded
 
 vedaskriptFiles = [
-  "https://dilipkhunti.github.io/Portfolio/modules/executor.py",
-  "https://dilipkhunti.github.io/Portfolio/modules/parser.py",
-  "https://dilipkhunti.github.io/Portfolio/modules/tokenizer.py",
-  "https://dilipkhunti.github.io/Portfolio/modules/validator.py",
-  "https://dilipkhunti.github.io/Portfolio/modules/codegenerator.py",
+  "https://vedaskript.vercel.app/modules/executor.py",
+  "https://vedaskript.vercel.app/modules/parser.py",
+  "https://vedaskript.vercel.app/modules/tokenizer.py",
+  "https://vedaskript.vercel.app/modules/validator.py",
+  "https://vedaskript.vercel.app/modules/codegenerator.py",
 ];
 
 // Function to initialize Pyodide and load all required files
