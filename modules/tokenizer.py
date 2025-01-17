@@ -72,7 +72,7 @@ class Tokenizer:
             if not match:
                 return {"type":"TokenizerOutput",
                         "response": False,
-                        "message": f"Unexpected character '{self.code[0]}' at line {line}, column {column}. Context: {self.code[:20]}...",
+                        "message": f"Unexpected character '{self.code[0]}' at line {line}, column {column}",
                         "tokens": []}
 
 
