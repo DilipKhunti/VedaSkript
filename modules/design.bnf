@@ -1,0 +1,68 @@
+<program>               ::= "कार्य मुख्यः" "(" <expression_list> ")" "{" <statement_list> "}"
+
+<function_defination>   ::= "कार्य" <identifier> "(" <expression_list> ")" "{" <statement_list> "}"
+
+<statement_list>        ::= <statement> | <statement> <statement_list>
+
+<statement>             ::= <variable_declaration>
+                          | <assignment>
+                          | <print_statement>
+                          | <if_statement>
+                          | <while_statement>
+                          | <continue_statement>
+                          | <break_statement>
+
+<variable_declaration>  ::= "चरः" <identifier> "=" <expression> ";"
+
+<assignment>            ::= <identifier> <assignment_operator> <expression> ";"
+
+<print_statement>       ::= "मुद्रणम्" "(" <expression_list> ")" ";"
+
+<if_statement>          ::= "यदि" "(" <expression> ")" "{" <statement_list> "}"
+                          | "यदि" "(" <expression> ")" "{" <statement_list> "}" <else_if_clauses> ["अन्यथा" "{" <statement_list> "}"]
+
+<else_if_clauses>       ::= "अन्यथा यदि" "(" <expression> ")" "{" <statement_list> "}"
+                          | "अन्यथा यदि" "(" <expression> ")" "{" <statement_list> "}" <else_if_clauses>
+
+<while_statement>       ::= "यावद्‌" "(" <expression> ")" "{" <statement_list> "}"
+
+<continue_statement>    ::= "अनुवर्तते" ";"
+
+<break_statement>       ::= "विरमतु" ";"
+
+<return_statement>      ::= "प्रतिददाति" <statement> ";"
+
+<expression_list>       ::= <expression> | <expression> "," <expression_list>
+
+<expression>            ::= <identifier>
+                          | <number>
+                          | <float>
+                          | <boolean>
+                          | <null>
+                          | <string>
+                          | <arithmetic_expression>
+                          | <comparison_expression>
+                          | "(" <expression> ")"
+
+<arithmetic_expression> ::= <expression> <arithmetic_operator> <expression>
+
+<comparison_expression> ::= <expression> <comparison_operator> <expression>
+
+<arithmetic_operator>   ::= "+" | "-" | "*" | "/" | "%"
+
+<comparison_operator>   ::= "==" | "!=" | ">" | "<" | ">=" | "<="
+
+<assignment_operator>   ::= "=" | "+=" | "-=" | "*=" | "/=" | "%="
+
+<identifier>            ::= [Sanskrit characters, starting with a valid letter]
+
+<number>                ::= [digits]
+
+<float>                 ::= [digits] "." [digits]
+
+<boolean>               ::= "सत्य" | "असत्य"
+
+<null>                  ::= "रिक्त"
+
+<string>                ::= "\"" [characters] "\""
+
