@@ -18,7 +18,7 @@ class Parser:
         if token is None:
             raise SyntaxError("Unexpected end of input")
         if token_type and token[0] != token_type:
-            raise SyntaxError(f"Expected {token_type}, got {token[0]} at position {self.pos}")
+            raise SyntaxError(f"Expected {token_type}, got {token[0]}, value = '{token[1]}' at line {token[2]} column {token[3]}")
 
         self.pos += 1
         return token
@@ -73,7 +73,7 @@ class Parser:
                 self.consume("PUNCTUATION")  # Consume the semicolon
                 return statement
 
-        raise SyntaxError(f"Unexpected token {token} in statement")
+        raise SyntaxError(f"Unexpected token '{token[1]}' in statement, at line {token[2]} column {token[3]} ")
     
     def parse_code_block(self): 
         # Parse a block of code enclosed in curly braces
@@ -395,7 +395,7 @@ class Parser:
             self.consume("PUNCTUATION")  # Consume ")"
             return expression
         else:
-            raise SyntaxError(f"Unexpected token: {token}")
+            raise SyntaxError(f"Unexpected token: '{token[1]}', at line {token[2]} column {token[3]}")
 
     def parse_assignment_expression(self):
         # Parse the left-hand side expression (which could be an identifier)

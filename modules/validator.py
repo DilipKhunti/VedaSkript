@@ -26,6 +26,8 @@ class ASTValidator:
         if node["type"] == "SanskritProgram":
             if "body" not in node or not isinstance(node["body"], list):
                 self.errors.append("SanskritProgram must have a 'body' of type list.")
+            if not node["body"]:
+                self.errors.append("programme is empty")
             for child in node.get("body", []):
                 self._collect_definitions(child)
         elif node["type"] == "FunctionDefination" or node["type"] == "MainFunction":
